@@ -1,0 +1,150 @@
+\documentclass[norsk,a4paper,12pt]{article}
+\usepackage[T1]{fontenc} %for å bruke æøå
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} %for å inkludere grafikk
+\usepackage{verbatim} %for å inkludere filer med tegn LaTeX ikke liker
+\usepackage{mathpazo}
+\bibliographystyle{plain}
+
+\title{Mal for rapportskriving i FYS2150}
+\author{Ditt navn}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dette dokumentet viser hovedtrekkene i hvordan vi ønsker at en rapport skal se ut. De aller viktigste punktene kommer i en sjekkliste i konklusjonen.
+Det dette første avsnittet, som kalles abstract eller sammendrag, skal inneholde noen få linjer om hensikt, gjennomføring og de viktigste konklusjonene i oppgaven.
+\end{abstract}
+
+\section{Introduksjon}
+Når dere skriver rapporter i dette kurset ønsker vi at dere skal bruke standardoppsett for vitenskapelige rapporter. Dette er samme oppsett som man bruker når man publiserer data i vitenskapelige tidsskrifter. Rapportene følger et strengt skjema der teksten er inndelt i abstract, introduksjon, teori (er ikke alltid med, og kan eventuelt være en del av introduksjonen), eksperimentelt (dersom det er en eksperimentell studie), resultater, diskusjon og konklusjon. I dette dokumentet kan dere lese om hva vi forventer at skal være med i de forskjellige avsnittene.
+
+Dersom dere synes at laboppgaven består av flere veldig selvstendige deloppgaver, kan dere velge å skrive et avsnitt om hver oppgave som er delt inn i teori, eksperimentelt, resultater og diskusjon. Dere bør ha en introduksjon og konklusjon som er felles for hele opphaven.
+
+Om dere vil bruke LaTex til å skrive rapportene deres, kan dere laste ned tex-fila til denne malen (rapporttips.tex) og fylle inn deres egen tekst. Dere kan også skrive dokumentet i Word, men husk at det endelige dokumentet alltid skal leveres i pdf-format.
+
+Husk at en rapport skrives til personer som ikke har deltatt på laboratoriet og ikke kjenner til det eksperimentet dere har gjort. Etter å ha lest rapporten skal en kyndig leser kunne forstå hva som er gjort, hva som er avledet av målingene og selv kunne vurdere om det er grunnlag for de konklusjonene dere trekker.
+
+I introduksjonen skal dere fortelle om bakgrunnen for og hensikten med det dere har gjort. Prøv å forklare for en utenforstående hvorfor det vi har gjort er viktig. Tenk også over hva som er sammenhengen mellom laboppgaven og andre ting dere lærer i studiet.
+
+
+\section{Teori}
+Teoridelen skal gi den nødvendige bakgrunnskunnskapen for å forstå det dere beskriver i resten av rapporten. For å unngå å gjengi mye teori kan dere henvise til lett tilgjengelige kilder. Referanser i LaTex organiseres lettest ved å bruke BibTex (se f.eks. \cite{BibTex}). Vi skal ikke være strenge på formatet til referansene her, det viktigste er at dere oppgir nok informasjon til at andre kan finne fram til det samme som dere har funnet.
+
+Alle formler som skal brukes i rapporten bør være presentert i teoridelen. Alle formler skal beskrives med ord, de skal ha ligningsnummer og alle størrelser i formlene skal defineres. For eksempler er svingetiden til en pendel gitt ved
+
+\begin{equation}
+T \approx 2\pi\sqrt{\frac{L}{g}},
+\label{eq:pendel}
+\end{equation}
+der $T$ er pendelens svingetid, $L$ er lengden fra pendelens massesenter til opphengspunkt, og $g$ er tyngdeakselerasjonen. Når dere senere skal bruke denne formelen refererer dere til den som Ligning (\ref{eq:pendel}).
+
+
+\section{Eksperimentelt}
+Beskriv hvordan dere faktisk utførte målingene, hvilket måleutstyr
+dere brukte og hvilke nøyaktigheter eller toleranser som er oppgitt
+fra produsenten der det er relevant. Tegn enkle skisser som beskriver målesituasjonen. Et eksempel på en skisse av en elektrisk krets er vist i Figur \ref{fig:krets}. Dere kan referere til oppgaveteksten, men dere må ha med såpass mye informasjon at en som ikke har oppgaveteksten foran seg, kan følge hovedtrekkene i det dere har gjort.
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width = 60mm]{kobling.png}\\
+  \caption{Skjematisk oppsett av RC-kretsen i laboppgave 2. Tabellen beskriver hvordan punktene 1-5 skal kobles opp med hhv. frekvensgenerator/oscilloscop og dataakvisisjonsboks. Figuren er hentet fra oppgaveteksten. }\label{fig:krets}
+  \end{center}
+\end{figure}
+
+Generelle usikkerhetsberegninger og toleranser til instrumentene presenteres i denne delen.
+
+Dersom laboppgaven har flere adskilte deler, kan dere beskrive hver del for seg med underoverskrifter. Dette gjelder også for resultat- og diskusjonsavsnittene.
+
+\subsection{Tid}
+Her beskrives det eksperimentelle oppsettet i den tenkte oppgaven "Tid",...
+\subsection{Frekvens}
+... og her følger oppsettet for "Frekvens".
+
+\section{Resultater}
+Dette avsnittet inneholder observasjoner og data, med forklaringer men uten tolkninger.
+
+Rådata presenteres i tabellform (se eksempel i Tabell
+\ref{tab:eksempel}) dersom dataene er notert i  labjournalen. Store mengder rådata tatt opp med PC presenteres direkte i figurer. Pass på at figurene er klare og tydelige:
+
+\begin{itemize}
+\item Alle figurer og tabeller må være nummerert og ha en figur-/tabelltekst (caption) som forteller hva figuren/tabellen viser eller inneholder.
+\item Alle figurer og tabeller skal være referert til og beskrevet i dokumentteksten (om ikke annet bare som "Dataene fra denne målingen er presentert i Tabell X og plottet i Figur X). På denne måten er det ikke så viktig akkurat hvor i teksten figurene er plassert. Ikke bruk tid på å prøve å få Word eller LaTex til å plassere figurene der dere vil.
+\item Alle figurer og tabeller må være pene og oversiktlige og
+  entydige når de skrives ut i svart/hvitt.
+\item Det må velges hensiktsmessig skala på aksene, og grafiske
+  fremstillinger skal ha aksetekster, enheter, store og tydelige
+  avmerkinger av målepunkter, gjerne med en symbolforklaring i
+  teksten.
+\item Datapunktene må markeres med symboler (o, x, s, *,...) såfremt det ikke er veldig mange datapunkter. Linjer mellom datapunkter er ikke nødvendig.
+\item Figurer fra Matlab bør gjøres ganske små på skjermen før de importeres til dokumentet, ellers blir tekst og symboler alt for små. Figurene \ref{fig:Matlabstor} og \ref{fig:Matlabliten} viser resultatet av figur som har vært lagret på en mindre heldig og en mer heldig måte i Matlab.
+\end{itemize}
+
+Beregninger av størrelser avledet av rådataene presenteres også i dette avsnittet. Henvis klart til hvilke formeler som er brukt i beregninger.
+
+Der det er mulig oppgis målte og beregnede verdier med tilhørende usikkerheter. Målte og beregnede tall oppgis med det antall gjeldende sifre som datagrunnlaget gir dekning for, dvs\ det er gitt av størrelsen på presisjonen (eller nøyaktigheten). Alle tall som oppgis må ha benevning.
+
+Husk at alle tall som blir brukt i beregninger skal finnes eksplisitt i rapporten. Dersom det ikke er deres egne data må dere ha med kildehenvisning (tyngdeakselerasjonen i Oslo er $9.819 ms^{-2}$ \cite{g_Wik}).
+
+Observasjoner av ting som hendte under eksperimentet som ikke
+  var planlagt, men som kan ha påvirket målingene, må også nevnes her.
+
+\begin{table}
+  \begin{center}
+  \caption{Eksempel på tabell. Legg merke til at tabellteksten hører hjemme over tabellen, mens figurtekst kommer under figuren.}
+  \begin{tabular}{|c|c|} \hline
+  \textbf{Strøm $I$ (mA)} & \textbf{Spenning $U$ (V)} \\ \hline
+  5.2 & 0.3 \\
+  10.8 & 0.7 \\ \hline
+  \end{tabular}
+  \end{center}
+  \label{tab:eksempel}
+\end{table}
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width = 80mm]{storeksempelfigur.png}\\
+  \caption{Eksempel på figur som har fylt hele skjermen i Matlab da den ble lagret, og som derfor blir veldig vanskelig å lese i rapporten. }\label{fig:Matlabstor}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width = 80mm]{liteneksempelfigur.png}\\
+  \caption{Eksempel på figur som har blitt gjort ganske liten på skjermen i Matlab da den ble lagret, og som derfor er lett å lese i rapporten. }\label{fig:Matlabliten}
+  \end{center}
+\end{figure}
+
+\section{Diskusjon}
+Her presenterer dere diskusjoner av resultatene. Sammenlign
+resultatene med teori der det er aktuelt. Stemmer resultatene med
+forventningene? Stemmer deres resultater overens (dvs. innenfor
+usikkerheter) med det andre har målt eller det dere kommer frem til i
+teorien? Hvorfor er det evt. ikke overensstemmelse? Har dere grunn til
+å forkaste noen måledata? Osv.
+
+\section{Konklusjon}
+En kort oppsummering av hovedresultat og konklusjonen av
+diskusjonen. Det er du og ikke leseren som skal trekke konklusjoner
+fra målingene.  Dette avsnittet ligner ofte på det som står i
+sammendraget (abstract) helt foran i rapporten.
+
+Her er en sjekkliste du kan bruke når du skriver rapporten:
+\begin{itemize}
+\item Husk sammendrag (abstract) før innledningen.
+\item Innledningen skal gi en utenforstående som ikke har lest oppgaveteksten forståelse for hensikten med oppgaven.
+\item Teoridelen skal inneholde nødvendig bakgrunnsinformasjon og alle formler som brukes i rapporten.
+\item Eksperimentelt skal inneholde alt som trengs for at en annen person skal kunne gjenta forsøket. Det er lov å referere til oppgaveteksten, men hovedtrekkene må være med slik at leseren ikke trenger å sitte med oppgaveteksten foran seg.
+\item Alle ligninger, figurer og tabeller skal nummereres.
+\item Alle ligninger, figurer og tabeller skal beskrives i teksten.
+\item Alle matematiske symboler skal defineres.
+\item Husk figurtekst under figuren, tabelltekst over tabellen.
+\item Pass på at figurene er lesbare.
+\item Husk riktig antall gjeldende sifre og benevning på alle tall.
+\end{itemize}
+
+
+\bibliography{referanser}
+\end{document}
