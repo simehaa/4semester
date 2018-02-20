@@ -16,3 +16,8 @@ for freq in [100,200,400,700,950,1300]:
     plt.ylabel('|X(frekv)|')
 plt.legend()
 plt.show()
+
+"""
+[Command: python -u /home/simen/github/university/4semester/fys2130/oblig3_9.py]
+[Finished in 10.199s]
+"""

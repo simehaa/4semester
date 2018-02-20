@@ -37,3 +37,8 @@ plt.ylabel("Amplitude")
 plt.ticklabel_format(useOffset=False)
 plt.grid(True)
 plt.show()
+
+"""
+simen@simenlinux:~/github/university/4semester/fys2130$
+
+"""
