@@ -1,0 +1,111 @@
+% REMEMBER TO SET LANGUAGE!
+\documentclass[a4paper,10pt,english]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[norsk]{babel}
+% Standard stuff
+\usepackage{amsmath,graphicx,varioref,verbatim,amsfonts,geometry}
+% colors in text
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+% Hyper refs
+\usepackage[colorlinks]{hyperref}
+
+% Document formatting
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{1.5mm}
+
+%Color scheme for listings
+\usepackage{textcomp}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+
+%Listings configuration
+\usepackage{listings}
+%Hvis du bruker noe annet enn python, endre det her for å få riktig highlighting.
+\lstset{
+	backgroundcolor=\color{lbcolor},
+	tabsize=4,
+	rulecolor=,
+	language=python,
+        basicstyle=\scriptsize,
+        upquote=true,
+        aboveskip={1.5\baselineskip},
+        columns=fixed,
+	numbers=left,
+        showstringspaces=false,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941}
+        }
+        
+\newcounter{subproject}
+\renewcommand{\thesubproject}{\alph{subproject}}
+\newenvironment{subproj}{
+\begin{description}
+\item[\refstepcounter{subproject}(\thesubproject)]
+}{\end{description}}
+
+%Lettering instead of numbering in different layers
+%\renewcommand{\labelenumi}{\alph{enumi}}
+%\renewcommand{\thesubsection}{\alph{subsection}}
+
+%opening
+\title{FYS-MEK1110 - Oblig X}
+\author{Arne Bjarne}
+
+\begin{document}
+
+\maketitle
+
+\section{Oppgave a}
+
+Newtons andre lov sier at ved konstant masse er kraft proporsjonal med akselerasjon. 
+\[ F = ma \]
+Eller på vektorform
+\[ \vec F = m \vec a \]
+Noen ganger er det kjekt å inkludere formler i teksten. 
+Det gjør vi slik: $F = ma$. 
+
+Dersom du trenger hjelp til å skrive en formel, anbefales \url{https://www.codecogs.com/latex/eqneditor.php} hvor du kan trykke inn formelen du vil ha og få produsert latexkode. 
+Jo flere formler du skriver, jo raskere det går det og jo sjeldnere trenger du å slå opp. 
+
+\subsection{Underkategori}
+
+Av og til vil vi dele opp oppgavene enda litt mer. 
+
+
+\section{Bilder}
+
+Denne tekstsnippen gjør det enkelt å inkludere bilder 
+
+\begin{figure}[h!]
+        \centering 
+        %Scale angir størrelsen på bildet. Bildefilen må ligge i samme mappe som tex-filen. 
+        \includegraphics[scale=0.2]{eksempel_graf.jpg} 
+        \caption{Bildetekst. Dette er en kul graf som viser det den skal.}
+        %Label gjør det enkelt å referere til ulike bilder.
+        \label{fig:eksempelbilde1}
+\end{figure}
+
+%Referanser fungerer først når du har kompilert to ganger!
+Denne figure kan jeg nå referere til ved å skrive: Figur \ref{fig:eksempelbilde1}. 
+
+
+\section{Kode}
+
+Det er ofte fint å inkludere kode i programmet også. 
+Denne tekstsnippen gjør det:
+
+\lstinputlisting{eksempel_kode.py}
+
+Dersom du skriver i matlab kan du få annen highlighting ved å endre ''lstset'' lenger opp i dokumentet. 
+
+
+\end{document}
