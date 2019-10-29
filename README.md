@@ -1,4 +1,4 @@
-# university repo
-All files are written by me, and are stored in Github.
+# University repo
+All files are written by me, and are stored in Github. 
 There are mostly Python files.
 
